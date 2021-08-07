@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <link rel="icon" href="../images/to-do-list.png"/>
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
+    <script src="../js/main.js" defer></script>
+    <script src="../js/todos.js" defer></script>
+    <script src="../js/header.js" defer></script>
+
+
+    <title>ToDo</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <i class="far fa-calendar-check"></i>
+            Power Plan
+        </div>
+        <button class="btn white" id="logout-btn">
+            Log out
+            <i class="fas fa-sign-out-alt"></i>
+        </button>
+    </header>
+
+    <main>
+
+        <div id="create-modal" class="modal">
+            <div id="close-create">X</div>
+            <h2>Create To Do</h2>
+            <input id="create-title" type="text"  placeholder="Title" />
+            <textarea id="create-text" rows="6" placeholder="Comments"></textarea>
+            <button class="btn green" id="submit-create">Submit</button>
+        </div>
+
+        <div id="edit-modal" class="modal">
+            <div id="close-edit">X</div>
+            <h2>Edit To Do</h2>
+            <input type="hidden" id="edit-id"/>
+            <input id="edit-title" type="text"  placeholder="Title" />
+            <textarea id="edit-text" rows="6" placeholder="Comments"></textarea>
+            <button class="btn green" id="submit-edit">Submit</button>
+        </div>
+
+        <section id="todo-section">
+
+            <div id="current-user"></div>
+
+            <button id="btn-create" class="btn green">
+                Create <i class="fas fa-plus"></i>
+            </button>
+
+            <h1 class="centered">Your To Do List</h1>
+
+            <div id="todo-list">
+
+            </div>
+
+            <div class="todos-message">
+                <h1 id="loading">Loading...</h1>
+                <h1 id="empty-list">No items to show <i class="fas fa-clipboard-list"></i></h1>
+            </div>
+        </section>
+    </main>
+
+
+</body>
+
+</html>

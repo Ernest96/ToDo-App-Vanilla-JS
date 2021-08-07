@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <link rel="icon" href="../images/to-do-list.png"/>
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/login.js" defer></script>
+    <script src="js/header.js" defer></script>
+
+
+    <title>ToDo</title>
+</head>
+
+<body id="index">
+
+    <header>
+        <div class="logo">
+            <i class="far fa-calendar-check"></i>
+            Power Plan
+        </div>
+        <button class="btn white" id="logout-btn">
+            Log out
+            <i class="fas fa-sign-out-alt"></i>
+        </button>
+    </header>
+
+    <main >
+        <section id="log-in">
+            <i class="far fa-calendar-check big"></i>
+            <h2>Power Plan</h2>
+            <h4>Transform your plans into actions</h4>
+            <button class="btn green" id="login-btn">
+                Sign in <i class="fas fa-sign-in-alt"></i>
+            </button>
+        </section>
+    </main>
+
+
+
+</body>
+
+</html>
