@@ -10,7 +10,7 @@ loginBtn.onclick = function () {
 
 auth.onAuthStateChanged(function(firebaseUser) {
     if (firebaseUser != null) {
-        window.location = "/pages/todos.html";
+        window.location = "pages/todos.html";
     }
     else {
         logInSection.style.visibility = "visible";
