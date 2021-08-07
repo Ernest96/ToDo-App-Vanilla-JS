@@ -57,8 +57,8 @@ submitCreate.onclick = function () {
 }
 
 submitEdit.onclick = function () {
-    let text = editTextInput.value;
     let title = editTitleInput.value;
+    let text = editTextInput.value.split("\n").join("<br />");
     let id = editIdInput.value;
 
     if (id && text && title && text.length > 0 && title.length > 0) {
@@ -92,11 +92,13 @@ function clearEditModal() {
 
 function getCurrentDateTime() {
     let date = new Date();
-    let day = date.getDay();
+    let day = date.getDate();
     let month = date.getMonth() + 1;
     let year = date.getFullYear();
-    let time = date.getHours() + ":" + date.getMinutes();
+    let minutes = date.getMinutes();
+    minutes = minutes < 10 ? "0" + minutes : minutes;
 
+    let time = date.getHours() + ":" +  minutes;
     let dateTime = day + "/" + month + "/" + year + " " + time;
 
     return dateTime;
@@ -149,7 +151,7 @@ function editTodo(id) {
         let item = docRef.data();
 
         editTitleInput.value = item.title;
-        editTextInput.value = item.text;
+        editTextInput.value = item.text.split("<br />").join("\n");
         editIdInput.value = id;
 
     })

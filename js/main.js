@@ -26,3 +26,5 @@ auth.onAuthStateChanged(function(firebaseUser) {
     }
     
 })
+
+console.log(window.location.hostname);
