@@ -183,6 +183,6 @@ auth.onAuthStateChanged(function (firebaseUser) {
         getTodos();
     }
     else {
-        window.location = "/index.html";
+        window.location = "../index.html";
     }
 })
